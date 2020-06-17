@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 17</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+
+  <!-- Övning 17 -
+  Gör ett program där användaren får mata in sin ålder.
+  Om användaren är 14 år eller yngre, skriv ut texten "Du får hålla dig till cykel", om användaren är 15-17 år "Du får köra moped"
+  och om användaren är 18 år eller äldre "Du kan ta bilen".-->
+
+</head>
+<body>
+  Ålder
+  <input type="text" class="age"/>
+  <button onclick="printRide()">Print Ride</button>
+  <div>
+    <label class="text-label"></label>
+  </div>
+
+</body>
+
+<script>
+  let age = document.getElementsByClassName('age')[0];
+  let textLabel = document.getElementsByClassName('text-label')[0];
+
+  function printRide(){
+    if(age.value <= 14){
+      textLabel.innerHTML = 'Du får hålla dig till cykel';
+    } else if(age.value >= 15 && age.value <= 17){
+      textLabel.innerHTML = 'Du får köra moped';
+    } else {
+      textLabel.innerHTML = 'Du kan ta bilen';
+    }
+  }
+
+</script>
+</html>

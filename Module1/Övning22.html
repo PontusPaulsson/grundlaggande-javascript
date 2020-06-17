@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 22</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+
+  <!-- Övning 22 -
+  Gör ett program som frågar användaren efter ett antal dagar och svarar med antal år, månader och dagar.
+  För enkelhets skull kan du anta att alla månader har 30 dagar.
+
+  Här kan ni t.ex. använda er av Math.floor(). exempel: http://www.w3schools.com/jsref/jsref_floor.asp
+
+  500 dagar ger
+  1 år 4 månader 15 dagar -->
+
+</head>
+<body>
+Antal dagar:
+<input type="text" class="days-input"/>
+<button class="calculate" onclick="calculate()">Calculate year, month, days</button>
+<label class="year"></label>
+<label class="months"></label>
+<label class="days"></label>
+</body>
+
+<script>
+  let daysInput = document.getElementsByClassName('days-input')[0];
+
+  let yearLabel = document.getElementsByClassName('year')[0];
+  let monthsLabel = document.getElementsByClassName('months')[0];
+  let daysLabel = document.getElementsByClassName('days')[0];
+
+  function calculate(){
+    let numberOfDays = parseInt(daysInput.value);
+
+    // Nollställ våra text labels
+    yearLabel.innerHTML = '';
+    monthsLabel.innerHTML = '';
+    daysLabel.innerHTML = '';
+
+
+    // Nollställ antal år månader och dagar
+    let years = 0;
+    let months = 0;
+    let days = 0;
+
+    while(numberOfDays / 365 >= 1){
+      years++;
+      numberOfDays -= 365;
+    }
+
+    while(numberOfDays / 30 >= 1){
+      months++;
+      numberOfDays -= 30;
+    }
+
+    // Resterande dagar sätts till days variabeln
+    days = numberOfDays;
+
+    if(years > 0){
+      yearLabel.innerHTML = `${years} år `;
+    }
+
+    if(months > 0){
+      monthsLabel.innerHTML = `${months} månader `;
+    }
+
+    if(days > 0){
+      daysLabel.innerHTML = `${days} dagar `;
+    }
+
+  }
+
+</script>
+</html>

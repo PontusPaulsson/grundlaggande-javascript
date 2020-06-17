@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 12</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+  <!-- Övning 12
+  Skapa ett program där ni matar in två tal. Gör tre olika knappar "+", "-" och "*". Skapa tre olika funktioner för de olika räknesätten och koppla knapparna till rätt funktion. (Ett tips är att börja med en av dem och sedan bygga vidare). -->
+
+</head>
+<body>
+<div>
+  Tal 1
+  <input class="number1" type="text"/>
+</div>
+<div>
+  Tal 2
+  <input class="number2" type="text"/>
+</div>
+  <button class="add-button" onclick="add()">+</button>
+  <button class="subtract-button" onclick="subtract()">-</button>
+  <button class="multiply-button" onclick="multiply()">*</button>
+  <div>
+    <input class="sum"/>
+  </div>
+</body>
+
+<script>
+  let number1 = document.getElementsByClassName('number1')[0];
+  let number2 = document.getElementsByClassName('number2')[0];
+
+  let sum = document.getElementsByClassName('sum')[0];
+
+  function add(){
+    sum.value = parseInt(number1.value) + parseInt(number2.value);
+  }
+  function subtract(){
+    sum.value = parseInt(number1.value) - parseInt(number2.value);
+  }
+  function multiply(){
+    sum.value = parseInt(number1.value) * parseInt(number2.value);
+  }
+
+</script>
+</html>

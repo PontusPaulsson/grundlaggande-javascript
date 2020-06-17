@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Övning 6</title>
+    <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-11 -->
+    <!--
+    Övning 6 Gör ett program med två variabler som heter x och y.
+    Ge x värdet 10 och y värdet 5. Skriv villkor (if satser) så att
+    utmatningen blir "x är större än y" eller "x är lika med y" eller "x är mindre än y" om så är fallet.
+    Ändra värden på x och y så ni ser att er if sats fungerar. -->
+    <script>
+      let x = 10;
+      let y = 5;
+      compare(x,y);
+
+      x = 5;
+      y = 10;
+      compare(x,y);
+
+      x = 5;
+      y = 5;
+      compare(x,y);
+
+      function compare(x, y) {
+        if (x > y) {
+          console.log('x är större än y');
+        } else if (x < y) {
+          console.log('x är mindre än y');
+        } else {
+          console.log('x är lika med y');
+        }
+      }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

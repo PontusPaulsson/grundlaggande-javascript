@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 11</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+  <!-- Övning 11
+  Skapa ett program där ni matar in två tal.
+  När man trycker på en knapp ska summan av de båda talen visas i en annan textruta. -->
+
+</head>
+<body>
+<div>
+  Tal 1
+  <input class="tal1" type="text"/>
+</div>
+<div>
+  Tal 2
+  <input class="tal2" type="text"/>
+</div>
+  <button class="add">Addera</button>
+  <div>
+    <input class="sum"/>
+  </div>
+</body>
+
+<script>
+  document.ready
+  let tal1 = document.getElementsByClassName('tal1')[0];
+  let tal2 = document.getElementsByClassName('tal2')[0];
+
+  let button = document.getElementsByClassName('add')[0];
+  let sum = document.getElementsByClassName('sum')[0];
+
+  button.addEventListener('click', () => {
+    sum.value = parseInt(tal1.value) + parseInt(tal2.value);
+    tal1.value = "";
+    tal2.value = "";
+  })
+
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 20</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+
+  <!-- Övning 20 -
+  Gör ett formulär där användaren matar in hur många gånger han vill få fram texten "I am the best".
+  Använd alertruta eller console.log() och trigga genom att trycka på en knapp.-->
+
+</head>
+<body>
+  Ange antal gånger du vill printa "I am the best" i consolen.
+  <input class="input" type="text"/>
+  <button onclick="printToConsole()">Print!</button>
+</body>
+
+<script>
+
+  let input = document.getElementsByClassName('input')[0];
+
+  function printToConsole(){
+    for(let i = 0; i < parseInt(input.value); i++){
+      console.log('I am the best');
+    }
+  }
+
+</script>
+</html>

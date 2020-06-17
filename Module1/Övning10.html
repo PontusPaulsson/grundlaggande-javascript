@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Övning 10</title>
+    <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-11 -->
+    <!-- Övning 10
+    Gör ett program som slumpar ut 5 decimaltal mellan 0 och 1 i en loop. För varje slumpat tal ska texten:
+    "Det var ett litet tal" skrivas ut om talet är mindre än 0,5
+    "Det var ett stort tal" skrivas ut om talet är större än eller lika med 0,5 -->
+
+    <script>
+
+        for(let i = 0; i < 5; i++){
+          printRandomNumber();
+        }
+
+        function printRandomNumber(){
+            let number = Math.random();
+            if(number < 0.5){
+              console.log('Det var ett litet tal');
+            } else{
+              console.log('Det var ett stort tal');
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

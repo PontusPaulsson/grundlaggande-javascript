@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 16</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+  <!-- Övning 16 -
+
+  På ett torg säljs potatis och andra grönsaker som har olika pris/kg.
+  Gör ett program som kan räkna ut pris då vi matar in vikten samt kilopriset.
+  Gör också ett till fält där kan mata in hur mycket kunden betalat.
+  Det ska sedan skrivas ut hur mycket kunden ska få tillbaka i växel.
+  (De fetmarkerade fälten ska skrivas in av användaren. De andra ska beräknas fram.)
+  Se exemplet nedan:
+
+  Pris/kg	24
+  Vikt (kg)	2.5
+  Beräkna pris
+  Beräknat pris	60
+  Betalt	100
+  Beräkna växel
+  Att få tillbaks	40 -->
+
+</head>
+<body>
+  Pris/kg
+  <input class="price" type="text"/>
+  Vikt (kg)
+  <input class="weight" type="text"/>
+  <button onclick="calculatePrice()">Beräkna pris</button>
+  <div style="margin-top: 20px;">
+    Beräknat pris
+    <input class="calculated-price" type="text"/>
+  </div>
+  <button onclick="calculateChange()">Beräkna växel</button>
+  <div style="margin-top: 20px;">
+    Betalt
+    <input class="payed" type="text"/>
+  </div>
+  <div style="margin-top: 20px;">
+    Att få tillbaks
+    <input class="change" type="text"/>
+  </div>
+</body>
+
+<script>
+
+  let weight = document.getElementsByClassName('weight')[0];
+  let price = document.getElementsByClassName('price')[0];
+  let calculatedPrice = document.getElementsByClassName('calculated-price')[0];
+  let payed = document.getElementsByClassName('payed')[0];
+  let change = document.getElementsByClassName('change')[0];
+
+  function calculatePrice(){
+    calculatedPrice.value = parseInt(weight.value * price.value);
+  }
+
+  function calculateChange(){
+    change.value = parseInt(payed.value - calculatedPrice.value);
+  }
+
+</script>
+</html>

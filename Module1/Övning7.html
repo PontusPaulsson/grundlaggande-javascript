@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Övning 7</title>
+    <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-11 -->
+    <!-- Övning 7
+    Gör ett program med tre variabler som heter x, y och z. Använd if, else if och else för att göra följande utskrifter:
+    om x är större än y och x är större än z, skriv ut "x är det högsta talet"
+    om y är större än x och y är större än z, skriv ut "y är det högsta talet"
+    om z är större än x och z är större än y, skriv ut "z är det högsta talet"
+    om inget av detta är sant, skriv ut "Det högsta talet finns lagrat i fler än en variabel" -->
+
+    <script>
+        let x = 10;
+        let y = 20;
+        let z = 30;
+        compare(x,y,z);
+
+        x = 20;
+        y = 10;
+        z = 5;
+        compare(x,y,z);
+
+        x = 20;
+        y = 30;
+        z = 5;
+        compare(x,y,z);
+
+        x = 5;
+        y = 5;
+        z = 4;
+        compare(x,y,z);
+
+        function compare(x,y,z){
+          if(x > y && x > z){
+            console.log('x är det högsta talet');
+          } else if(y > x && y > z){
+            console.log('y är det högsta talet');
+          } else if(z > x && z > y){
+            console.log('z är det högsta talet');
+          } else {
+            console.log('Det högsta talet finns lagrat i fler än en variabel');
+          }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

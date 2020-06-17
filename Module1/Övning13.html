@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 13</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+  <!-- Skapa en slumpgenerator som varje gång man trycker på en knapp skriver ut ett slumptal i en ruta. t.ex. <input id="test1" type=text">  -->
+
+</head>
+<body>
+  <button class="random-buttom" onclick="printRandomNumber()">Random number 1-100</button>
+  <div>
+    <input class="sum"/>
+  </div>
+</body>
+
+<script>
+  let sum = document.getElementsByClassName('sum')[0];
+
+  function printRandomNumber(){
+    // Vi tar random * 100 för att få ett tal mellan 0-100
+    let randomNumber = Math.random() * 100;
+
+    // Vi gör oss av med eventuella decimaler med hjälp av Math.round() funktionen
+    sum.value = Math.round(randomNumber);
+  }
+
+</script>
+</html>

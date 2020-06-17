@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 15</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+  <!-- Övning 15 - På ett torg säljs potatis och andra grönsaker som har olika pris/kg. Gör ett program som kan räkna ut pris då vi matar in vikten samt kilopriset. -->
+
+</head>
+<body>
+  Vikt
+  <input class="weight" type="text"/>
+  Pris
+  <input class="price" type="text"/>
+  <button class="random-buttom" onclick="calculatePrice()">Calculate Price</button>
+  <div style="margin-top: 20px;">
+    Pris
+    <input class="sum"/>
+  </div>
+</body>
+
+<script>
+  let sum = document.getElementsByClassName('sum')[0];
+  let weight = document.getElementsByClassName('weight')[0];
+  let price = document.getElementsByClassName('price')[0];
+
+  function calculatePrice(){
+    sum.value = parseInt(weight.value * price.value);
+  }
+
+</script>
+</html>

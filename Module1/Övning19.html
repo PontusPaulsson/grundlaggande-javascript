@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 19</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+
+  <!-- Övning 19 -
+  Gör ett formulär där man kan mata in en varas pris exklusive moms samt antal och momssats (t.ex. 25%).
+  När användaren trycker på en knapp ska priset visas både med och utan moms.-->
+
+</head>
+<body>
+  Pris exklusive moms
+  <input type="text" class="price"/>
+  Moms (%)
+  <input type="text" class="tax"/>
+  Antal
+  <input type="text" class="amount"/>
+  <button class="guess-button" onclick="printPrice()">Räkna ut</button>
+  <div>
+    Pris inklusive moms:
+    <label class="price-tax"></label>
+  </div>
+  <div>
+    Pris exklusive moms:
+    <label class="price-no-tax"></label>
+  </div>
+</body>
+
+<script>
+
+  let price = document.getElementsByClassName('price')[0];
+  let tax = document.getElementsByClassName('tax')[0];
+
+  let amount = document.getElementsByClassName('amount')[0];
+  let priceTaxLabel = document.getElementsByClassName('price-tax')[0];
+  let priceNoTaxLabel = document.getElementsByClassName('price-no-tax')[0];
+
+  function printPrice(){
+    priceNoTaxLabel.innerHTML = parseInt(price.value * amount.value);
+
+    priceTaxLabel.innerHTML = parseInt(price.value * ((tax.value/100)+1) * amount.value);
+
+  }
+
+</script>
+</html>

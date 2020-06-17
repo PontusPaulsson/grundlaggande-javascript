@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 18</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+
+  <!-- Övning 18 -
+  Gör ett program som slumpar fram ett tal (1-9).
+  Användaren får sedan tre försök att gissa på rätt tal.
+  Efter tre gissningar ska texten "Tyvärr, du misslyckades" komma upp och om användaren gissar rätt ska texten "Grattis" komma upp..-->
+
+</head>
+<body>
+  Gissa på ett nummer mellan 1-9
+  <input type="text" class="number"/>
+  <button class="guess-button" onclick="guessNumber()">Gissa</button>
+  <div>
+    <label class="text-label"></label>
+  </div>
+
+</body>
+
+<script>
+  let randomNumber = Math.floor(Math.random() * 9) + 1;
+  let number = document.getElementsByClassName('number')[0];
+  let textLabel = document.getElementsByClassName('text-label')[0];
+  let guessButton = document.getElementsByClassName('guess-button')[0];
+  let guesses = 0;
+
+  function guessNumber(){
+    if(randomNumber === parseInt(number.value)){
+      textLabel.innerHTML = 'Grattis du gissade rätt! Ladda om sidan för att spela igen.';
+      guessButton.disabled = true;
+    } else if(guesses < 2) {
+      textLabel.innerHTML = 'Du gissade på ' + number.value + ' men tyvärr var det fel. Gissa igen!';
+    } else {
+      textLabel.innerHTML = 'Du har gissat 3 gånger. Game over. Ladda om sidan för att spela igen.';
+      guessButton.disabled = true;
+    }
+    guesses++;
+  }
+
+</script>
+</html>

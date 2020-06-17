@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 23</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+
+  <!-- Övning 23 -
+
+  Skriv ett program som ber användaren mata in tre tal och skriver ut det största av dem.
+
+  -->
+
+</head>
+<body>
+  <label class="label">Mata in ett tal.</label>
+  <input class="number" type="text"/>
+  <button class="button" onclick="calculate()">Press me!</button>
+  <div>
+    <label class="highest-number"></label>
+  </div>
+</body>
+
+<script>
+
+  let label = document.getElementsByClassName('label')[0];
+  let number = document.getElementsByClassName('number')[0];
+  let highestNumber = document.getElementsByClassName('highest-number')[0];
+  let button = document.getElementsByClassName('button')[0];
+
+  let numberOfClicks = 0;
+
+  let numbers = [];
+
+  function calculate(){
+
+    if(numberOfClicks === 0){
+      label.innerHTML = 'Mata in ytterligare ett tal';
+      numbers[0] = parseInt(number.value);
+    }
+
+    if(numberOfClicks === 1){
+      label.innerHTML = 'Mata in ett sista tal';
+      numbers[1] = parseInt(number.value);
+    }
+
+    if(numberOfClicks === 2){
+      numbers[2] = parseInt(number.value);
+      highestNumber.innerHTML = `Det högsta talet var: ${Math.max(...numbers)}`;
+      button.disabled = true;
+    }
+    number.value = '';
+    numberOfClicks++;
+  }
+
+</script>
+</html>

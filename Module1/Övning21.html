@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Övning 21</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-12 -->
+
+  <!-- Övning 21 -
+  Man vill ha ett program som omvandlar en temperatur i Celsius till Fahrenheit enligt formeln: tempF = 1.8 * tempC + 32.
+  Utforma dialogen med användaren på ditt eget sätt.-->
+
+</head>
+<body>
+  Ange antal Celsius
+  <input class="celsius" type="text"/>
+  <button onclick="convertCelsiusToFahrenheit()">Convert</button>
+  Fahrenheit: <label class="fahrenheit"></label>
+</body>
+
+<script>
+
+  let celsius = document.getElementsByClassName('celsius')[0];
+  let fahrenheit = document.getElementsByClassName('fahrenheit')[0];
+
+  function convertCelsiusToFahrenheit(){
+    fahrenheit.innerHTML = parseFloat((1.8 * celsius.value) + 32).toFixed(1);
+  }
+
+</script>
+</html>
