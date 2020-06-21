@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 10x</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 10x -
+  Bygg vidare uppgiften med en funktion (sortNames) som returnerar alla elever sorterade i betygsordning.
+  Tips: använd den inbyggda sorteringen (lite klurigt), skriv en egen sorteringsalgoritm (t ex sök på "insertion sort" - också lite klurigt)
+  eller fuska lite: anropa den tidigare funktionen getNames för att få alla namn som har "A", därefter igen för att få alla "B", osv.
+  Lägg ihop alla svar så har du namnen sorterade i betygsordning.
+  -->
+</head>
+<body>
+
+</body>
+<script>
+  const persons = ["Klara", "Andrea", "Emil", "Sarah", "Alicia", "Victor", "Thomas", "Robert"];
+  const grades = ["A", "B", "C", "A", "D", "C", "E", "E"]
+  // Returns the grade for a specific person
+  function getGrade(name, grades, persons){
+    const index = persons.findIndex(x => x == name);
+    return grades[index];
+  }
+  // Return persons with a specific gradey
+  function getNames(grade, persons, grades){
+    let names = [];
+    for(let i = 0; i < grades.length; i++){
+      if(grades[i] === grade){
+        names.push(persons[i]);
+      }
+    }
+    return names;
+  }
+  // Returns a array of objects with person + grade, sorted by grade
+  function sortNames(persons, grades){
+    let namesAndGrades = [];
+    for(let i = 0; i < persons.length; i++){
+      namesAndGrades.push({name: persons[i], grade: grades[i]});
+    }
+    return namesAndGrades.sort((a,b) => a.grade.localeCompare(b.grade));
+  }
+
+  // alert("Klara har betyg " + getGrade("Klara", grades, persons));
+  // alert("Andrea har betyg " + getGrade("Andrea", grades, persons));
+  // alert("Sarah har betyg " + getGrade("Sarah", grades, persons));
+
+  // console.log(getNames('A', persons, grades));
+  // console.log(getNames('B', persons, grades));
+  // console.log(getNames('C', persons, grades));
+
+  console.log(sortNames(persons, grades));
+
+</script>
+</html>

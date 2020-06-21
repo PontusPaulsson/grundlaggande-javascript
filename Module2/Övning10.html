@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 10</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 10 -
+  Bygg ut uppgiften innan med en funktion (getNames) som returnerar alla namn (i form av en array) som har ett visst betyg
+  -->
+</head>
+<body>
+
+</body>
+<script>
+  const persons = ["Klara", "Andrea", "Emil", "Sarah", "Alicia", "Victor", "Thomas", "Robert"];
+  const grades = ["A", "B", "C", "A", "D", "C", "E", "E"]
+  // Returns the grade for a specific person
+  function getGrade(name, grades, persons){
+    const index = persons.findIndex(x => x == name);
+    return grades[index];
+  }
+  // Return persons with a specific gradey
+  function getNames(grade, persons, grades){
+    let names = [];
+    for(let i = 0; i < grades.length; i++){
+      if(grades[i] === grade){
+        names.push(persons[i]);
+      }
+    }
+    return names;
+  }
+
+  // alert("Klara har betyg " + getGrade("Klara", grades, persons));
+  // alert("Andrea har betyg " + getGrade("Andrea", grades, persons));
+  // alert("Sarah har betyg " + getGrade("Sarah", grades, persons));
+
+  console.log(getNames('A', persons, grades));
+  console.log(getNames('B', persons, grades));
+  console.log(getNames('C', persons, grades));
+
+</script>
+</html>

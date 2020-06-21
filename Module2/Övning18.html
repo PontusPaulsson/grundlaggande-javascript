@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 18</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 18 -
+  Gör en sida som har ett div-element som det står Glad påsk i med absolutpositionering samt en knapp.
+  När användaren trycker på en knapp ska ny x och y position slumpas fram så att texten flyttar sig.
+  -->
+</head>
+<body id="body">
+  <button onclick="randomEaster()">Press me!</button>
+  <h1 class="header" style="position: absolute; left: 100px; top: 100px">Glad påsk!</h1>
+</body>
+<script>
+  randomEaster = () => {
+    document.getElementsByClassName('header')[0].style.cssText = `left: ${Math.floor(Math.random(1) * 500)}px; top: ${Math.floor(Math.random(1) * 500)}px; position:absolute;`;
+  }
+</script>
+
+</html>

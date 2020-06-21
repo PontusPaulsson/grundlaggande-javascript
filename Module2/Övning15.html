@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 15</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 15 -
+  Gör en funktion (kryptera) som krypterar en text genom att byta ut bokstäverna
+  "o", "e", "t", och "n" till tecknen "!", "#", "%", och "&" (om du vill kan du lägga till lite fler bokstäver som byts ut).
+  Gör också en funktion (dekryptera) som byter tillbaks tecknen till klartext igen.
+  Testa och demonstrera att dina funktioner fungerar, tex. att användaren kan mata in en sträng för kryptering, eller en (redan) krypterad sträng för dekryptering.
+  -->
+</head>
+<body>
+
+</body>
+<script>
+
+
+  encrypt = (text) => {
+    return text.replace('o', '!').replace('e', '#').replace('t', '%').replace('n', '&');
+  }
+  decrypt = (text) => {
+    return text.replace('!', 'o').replace('#', 'e').replace('%', 't').replace('&', 'n');
+  }
+
+  console.log(encrypt('encrypt me'));
+  console.log(decrypt('#&cryp% me'));
+
+</script>
+
+</html>

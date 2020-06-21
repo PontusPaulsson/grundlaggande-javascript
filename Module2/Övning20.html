@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 20</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 20 -
+  Gör en sida som har ett div-element som det står Glad påsk i med absolut positionering.
+  Sätt en timer som kallar på en funktion som flyttar elementet 1 pixel åt höger 20 ggr per sekund.
+  -->
+</head>
+<body id="body">
+<div class="easter" style="position: absolute; top: 0; left: 0;">Glad Påsk!</div>
+</body>
+<script>
+  let left = 0;
+
+  moveDiv = () => {
+    left++;
+    document.getElementsByClassName('easter')[0].style.cssText = `position: absolute; top: 0; left:${left}px`;
+  }
+
+  setInterval(() => {
+    moveDiv();
+  }, 50);
+
+</script>
+
+</html>

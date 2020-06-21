@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 6</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-17 -->
+  <!-- Module 2 - Övning 6 -
+  Skapa en array med orden "Hej", "Nej", "EJ", "Leverpastej", "42".
+  Via ett formulär ska användaren kunna skriva en siffra och ni ska då visa positionens ord i arrayen.
+  Till exempel: anger användaren 2 ska ordet "EJ" visas.
+  -->
+</head>
+<body>
+  Index: <input type="text" class="index"/><button onclick="printWord(indexInput.value)">Alert!</button>
+</body>
+<script>
+  let indexInput = document.getElementsByClassName('index')[0];
+  let words = ['Hej', 'Nej', 'EJ', 'Leverpastej', '42'];
+
+  function printWord(index){
+    alert(words[index]);
+  }
+
+</script>
+</html>

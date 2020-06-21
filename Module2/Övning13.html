@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 13</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 13 -
+  Det finns även andra strängmetoder som är väldigt användbara: indexOf(), charAt(), toUpperCase(), och toLowerCase().
+  Läs på hur dessa fungerar och skriv ett program som demonstrerar dessa metoder.
+  -->
+</head>
+<body>
+
+</body>
+<script>
+  // indexOf is used for finding the index of a sequence of character in a string.
+  // It is commonly together with substring to receive certain information for example the sender and reciever of a order
+
+
+  let order = `<Sender>ICA Gruppen AB</Sender><Receiver>Delicato</Receiver><Orderinformation>5000 delicatorbollar</Orderinformation>`;
+
+  function parseOrderFile(order){
+    let sender = order.substring(order.indexOf('<Sender>') + 8 , order.lastIndexOf('</Sender>'));
+    let receiver = order.substring(order.indexOf('<Receiver>') + 10 , order.lastIndexOf('</Receiver>'));
+    let orderInformation = order.substring(order.indexOf('<Orderinformation>') + 18 , order.lastIndexOf('</Orderinformation>'));
+
+    console.log("Sender:", sender);
+    console.log("Receiver:", receiver);
+    console.log("Orderinformation:", orderInformation);
+  }
+
+  parseOrderFile(order);
+
+  // charAt is used for finding a character at the specified index of a string
+  console.log('charAt index 15:','Merry christmas!'.charAt(15))
+
+  // toUpperCase and toLowerCase is often used when comparing case in-sensitive userinput, like for example a username
+  function login(userNameInput, passwordInput){
+    let userNameFromDatabase = 'GasCan';
+    let passwordFromDatabase = 'verystr0ngP4ssw0rd';
+
+    if(userNameInput.toUpperCase() === userNameFromDatabase.toUpperCase() && passwordInput === passwordFromDatabase)
+      console.log('You are logged in.')
+    else
+      console.log('Wrong username or password entered.');
+  }
+  login('gascan', 'verystr0ngP4ssw0rd');
+
+</script>
+</html>

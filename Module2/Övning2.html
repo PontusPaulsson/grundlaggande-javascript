@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 2</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-17 -->
+  <!-- Module 2 - Övning 2 -
+  Skapa 3 funktioner och ett formulär. Den första funktionen ska köras när man trycker på knappen och ska använda sig av de andra funktionerna.
+  De andra två funktionerna ska räkna ut summan av två tal och produkten av två tal.
+  Se exempel nedan när man tryckt på knappen:
+  Tal1	2
+  Tal2	3
+  [CALCULATE KNAPP]
+  Summa	5
+  Produkt	6
+  -->
+</head>
+<body>
+  <div>
+    Tal1: <input class="number1" type="text"/>
+  </div>
+  <div>
+    Tal2: <input class="number2" type="text"/>
+  </div>
+  <div>
+    <button onclick="calculate()">Calculate</button>
+  </div>
+  <div>
+    Summa: <label class="sum"></label>
+  </div>
+  <div>
+    Produkt: <label class="product"></label>
+  </div>
+</body>
+<script>
+  let number1 = document.getElementsByClassName("number1")[0];
+  let number2 = document.getElementsByClassName("number2")[0];
+
+  let sumLabel = document.getElementsByClassName("sum")[0];
+  let productLabel = document.getElementsByClassName("product")[0];
+
+  function calculate() {
+    console.log("Test");
+    sumLabel.innerHTML = add(parseInt(number1.value), parseInt(number2.value));
+    productLabel.innerHTML = multiply(parseInt(number1.value), parseInt(number2.value));
+  }
+
+  function add(x, y) {
+    return x + y;
+  }
+
+  function multiply(x, y) {
+    return x * y;
+  }
+</script>
+</html>

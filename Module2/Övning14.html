@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 14</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 14 -
+  Gör ett program som frågar efter en text och sedan skriver ut texten flera gånger.
+  Först med bara en bokstav, därefter två, och så vidare. T ex: matar användaren in "Thomas" så ska strängarna "T", "Th", "Tho", "Thom", "Thoma", "Thomas" skrivas ut.
+  -->
+</head>
+<body>
+Text: <input type="text" class="textInput"/>
+<button onclick="printText()">Press me!</button>
+</body>
+<script>
+  let textInput = document.getElementsByClassName('textInput')[0];
+
+  printText = () => {
+    let text = textInput.value;
+    for(let i = 0; i < text.length ; i++)
+      console.log(text.substring(0, i+1));
+  }
+
+</script>
+</html>

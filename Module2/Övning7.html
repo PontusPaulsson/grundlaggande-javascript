@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 7</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-17 -->
+  <!-- Module 2 - Övning 7 -
+  Skapa en array med orden "Hej", "Nej", "EJ", "Leverpastej", "42". Slumpa fram ett av orden och visa dem med valfri metod när ni trycker på en knapp.
+  -->
+</head>
+<body>
+  <button onclick="printRandomWord()">Alert random word!</button>
+</body>
+<script>
+  let words = ['Hej', 'Nej', 'EJ', 'Leverpastej', '42'];
+
+  function printRandomWord(){
+    alert(words[Math.floor(Math.random() * 5)]);
+  }
+
+</script>
+</html>

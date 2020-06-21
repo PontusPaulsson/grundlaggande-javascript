@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 8</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-17 -->
+  <!-- Module 2 - Övning 8 -
+  Skapa en array med orden "det", "är", "kul", "att", "programmera". Använd en loop för att skriva ut texten "det är kul att programmera".
+  -->
+</head>
+<body>
+<label class="label"></label>
+</body>
+<script>
+  let label = document.getElementsByClassName("label")[0];
+  let words = ['det', 'är', 'kul', 'att', 'programmera'];
+
+  function printWords(){
+    for(let i = 0; i < words.length; i++){
+      label.innerHTML = label.innerHTML + " " + words[i];
+    }
+  }
+
+  printWords();
+
+</script>
+</html>

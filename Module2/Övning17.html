@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 17</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 17 -
+  Gör en sida som innehåller en knapp.
+  När man trycker på knappen ska texten "Glad påsk" skrivas ut som ett h1 element (ett nytt h1-element ska läggas till) inuti body-elementet.
+  Färgen på Glad påsk ska vara röd.
+  -->
+</head>
+<body id="body">
+<button onclick="happyEaster()">Press me!</button>
+</body>
+<script>
+  happyEaster = () => {
+    var h1 = document.createElement('h1');
+    var text = document.createTextNode('Glad påsk');
+    h1.style.cssText = `color: red`;
+    h1.appendChild(text);
+
+    const body = document.getElementById('body');
+    body.appendChild(h1);
+  }
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 21</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 21 -
+    Gör ett program som  placerar ut 1 st div-element 50*50 pixlar per sekund på en slumpad position.
+    (Det kan finnas flera sätt att lösa uppgiften på, t.ex. kan ett div-element flyttas till en ny position en gång per sekund,
+    eller så kan ett nytt div-element skapas en gång per sekund.)
+  -->
+</head>
+<body id="body">
+
+</body>
+
+<script>
+
+  const backgroundColors = ['red', 'blue', 'black', 'green', 'brown', 'pink', 'orange'];
+
+  // I've chosen to solve this by creating a new div and appending the new div to the body-element.. with a little twist :)
+  createRandomDiv = () => {
+    const div = document.createElement('div');
+    div.style.cssText = `position: absolute; width: 50px; height: 50px;
+    left: ${Math.floor(Math.random(1) * 1000)}px;
+    top: ${Math.floor(Math.random(1) * 1000)}px;
+    background-color: ${backgroundColors[Math.floor(Math.random(1)*7)]}`;
+    document.getElementById('body').appendChild(div);
+  }
+
+  setInterval(() => {
+    createRandomDiv();
+  }, 1000)
+
+</script>
+
+</html>

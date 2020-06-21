@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 14x</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 14x -
+  Fortsätt med mer utskrifter i föregående uppgift.
+  Efter att "Thomas" har skrivit uts (6 st delsträngar) så ska allt börja om från andra bokstaven i strängen.
+  Dvs, följande skrivs ut: "h", "ho", "hom", "homa", "homas" (5 st delsträngar).
+  Därefter ska allt skrivas om från 3:e bokstaven, 4:e bokstaven, osv, tills strängen inte har fler bokstäver.
+  Vi skulle alltså få även: "o", "om", "oma", "omas", och: "m", "ma", "mas", och: "a", "as", och slutligen "s".
+  -->
+</head>
+<body>
+Text: <input type="text" class="textInput"/>
+<button onclick="printText()">Press me!</button>
+</body>
+<script>
+  let textInput = document.getElementsByClassName('textInput')[0];
+
+  printText = () => {
+    let text = textInput.value;
+    for(let i = 0; i < text.length ; i++){
+      for(let j = 0; j < text.length; j++){
+        if(j >= i)
+          console.log(text.substring(i, j+1));
+      }
+      console.log('---------------------');
+    }
+  }
+
+  printText();
+
+</script>
+</html>

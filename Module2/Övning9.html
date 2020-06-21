@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 9</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-17 -->
+  <!-- Module 2 - Övning 9 -
+  Morgan, som är högstadielärare, behöver ett register för att hålla ordning på sina elevers betyg.
+  Antag att du har två arrayer, en med namn och en med betyg.
+  Exempelvis: namn = ["Klara", "Andrea", "Emil", "Sarah", "Alicia", "Victor", "Thomas", "Robert"] med betygen: betyg = ["A", "B", "C", "A", "D", "C", "E", "E"].
+  Gör därefter en funktion (getGrade) som söker efter ett namn och returnerar betyget (första matchande namnet räcker).
+  Gör därefter en sida som testar och demonstrerar din nya funktion (automatiskt när sidan laddas eller via en knapptryckning).
+  Arrayerna namn och betyg kan vara globala variabler eller, lite snyggare, lokala variabler som skickas som indata till funktionerna.
+  -->
+</head>
+<body>
+
+</body>
+<script>
+  const persons = ["Klara", "Andrea", "Emil", "Sarah", "Alicia", "Victor", "Thomas", "Robert"];
+  const grades = ["A", "B", "C", "A", "D", "C", "E", "E"]
+
+  function getGrade(name, grades, persons){
+    const index = persons.findIndex(x => x == name);
+    return grades[index];
+  }
+
+  alert("Klara har betyg " + getGrade("Klara", grades, persons));
+  alert("Andrea har betyg " + getGrade("Andrea", grades, persons));
+  alert("Sarah har betyg " + getGrade("Sarah", grades, persons));
+
+</script>
+</html>

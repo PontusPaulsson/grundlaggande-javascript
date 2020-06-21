@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 3</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-17 -->
+  <!-- Module 2 - Övning 3 -
+  Bygg ut tidigare exempel utan att skapa några nya funktioner så ni även skriver ut summan av de tidigare framräknade talen (vilket bör bli 11 i ovanstående exempel)
+  -->
+</head>
+<body>
+  <div>
+    Tal1: <input class="number1" type="text"/>
+  </div>
+  <div>
+    Tal2: <input class="number2" type="text"/>
+  </div>
+  <div>
+    <button onclick="calculate()">Calculate</button>
+  </div>
+  <div>
+    Summa: <label class="sum"></label>
+  </div>
+  <div>
+    Produkt: <label class="product"></label>
+  </div>
+  <div>
+    Summa+Produkt: <label class="sum-plus-product"></label>
+  </div>
+</body>
+<script>
+  let number1 = document.getElementsByClassName("number1")[0];
+  let number2 = document.getElementsByClassName("number2")[0];
+
+  let sumLabel = document.getElementsByClassName("sum")[0];
+  let productLabel = document.getElementsByClassName("product")[0];
+  let sumPlusProductLabel = document.getElementsByClassName("sum-plus-product")[0];
+
+  function calculate() {
+    sumLabel.innerHTML = add(parseInt(number1.value), parseInt(number2.value));
+    productLabel.innerHTML = multiply(parseInt(number1.value), parseInt(number2.value));
+    sumPlusProductLabel.innerHTML = add(parseInt(sumLabel.innerHTML), parseInt(productLabel.innerHTML));
+  }
+
+  function add(x, y) {
+    return x + y;
+  }
+
+  function multiply(x, y) {
+    return x * y;
+  }
+</script>
+</html>

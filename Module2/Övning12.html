@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 12</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 12 -
+  Gör ett program som demonstrerar strängmetoderna: slice(), split(), och join().
+  -->
+</head>
+<body>
+
+</body>
+<script>
+  // First example - String.prototype.slice
+  const firstExample = 'Merry christmas!';
+  const merry = firstExample.slice(0,5);
+  const christmas = firstExample.slice(6,firstExample.length);
+  console.log(merry + ' ' + christmas);
+
+  // Second example - String.prototype.split
+  const secondExample = 'Merry,christmas,happy,new,year!';
+  const merryChristmasHappyNewYear = secondExample.split(',');
+  merryChristmasHappyNewYear.forEach(word => {
+    console.log(word)
+  });
+
+  // Third example - Array.prototype.join
+  const thirdExample = ['Merry', 'christmas'];
+  console.log(thirdExample.join());
+
+</script>
+</html>
