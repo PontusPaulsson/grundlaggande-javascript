@@ -5,38 +5,42 @@
   <title>Module 2 - Övning 23</title>
   <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
   <!-- Module 2 - Övning 23 -
-  Gör ett program som  placerar ut 5 st div-element med storleken 50*50 pixlar (ok om man skapar dem direkt i HTML-koden) på slumpade positioner.
-  När användaren drar musen över dem ska de slumpas ut på en ny position.
+  Gör ett div-element 50*200 pixlar som rör sig fram och tillbaka på skärmen med texten Glad påsk
+  den ska röra sig en pixel åt höger i ett visst intervall.
+  när elementet flyttat sig 200 pixlar ska det byta till motsatt riktning.
   -->
 </head>
 <body id="body">
+  <div class="easter">Glad påsk</div>
 </body>
 
 <script>
+  let pixelsMoved = 0;
+  let direction = 'right';
 
-  initialize = () => {
-    for(let i = 0; i < 5; i++){
-      const div = document.createElement('div');
-      div.style.cssText = `position: absolute; width: 50px; height: 50px;
-      left: ${Math.floor(Math.random(1) * 1000)}px;
-      top: ${Math.floor(Math.random(1) * 1000)}px;
-      background-color: black;`
-      div.classList.add('div');
-      document.getElementById('body').appendChild(div);
-    }
+  moveDiv = () => {
+    const div = document.getElementsByClassName('easter')[0];
+    div.style.cssText = `position: absolute; left: ${pixelsMoved}px; top: 0;`
+
+      // Moved div 20 pixels in given direction
+      if(direction === 'right'){
+        pixelsMoved += 20;
+      }
+      else if(direction === 'left'){
+        pixelsMoved -= 20;
+      }
+      // Switch direction when the div has moved 200 pixels in one direction
+      if(pixelsMoved === 200){
+        direction = 'left'
+      }
+      else if(pixelsMoved === 0){
+        direction = 'right';
+      }
   };
 
-  initialize();
-
-  const divs = document.getElementsByClassName('div');
-  for(let i = 0; i < divs.length; i++){
-    divs[i].addEventListener('mouseenter', (e) => {
-      e.target.style.cssText = `position: absolute; width: 50px; height: 50px;
-      left: ${Math.floor(Math.random(1) * 1000)}px;
-      top: ${Math.floor(Math.random(1) * 1000)}px;
-      background-color: black;`;
-    })
-  }
+  setInterval(() => {
+    moveDiv();
+  }, 1000)
 
 </script>
 

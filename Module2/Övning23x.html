@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 - Övning 23x</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-21 -->
+  <!-- Module 2 - Övning 23x -
+    Gör nu samma uppgift igen men få nu Glad påsk att röra sig i en cirkel på sidan istället.
+  -->
+</head>
+<body id="body">
+  <div class="easter" style="position: absolute; left: 500px; right: 500px;">Glad påsk</div>
+</body>
+
+<script>
+  let pixelsMovedX = 500;
+  let pixelsMovedY = 500;
+  let directionX = 'right';
+  let directionY =  'top';
+
+  moveDiv = () => {
+    const div = document.getElementsByClassName('easter')[0];
+    div.style.cssText = `position: absolute; left: ${pixelsMovedX}px; top: ${pixelsMovedY}px;`
+
+    if(directionX === 'right'){
+      pixelsMovedX += 1;
+    } else if(directionX === 'left'){
+      pixelsMovedX -= 1;
+    }
+
+    if(directionY === 'top'){
+      pixelsMovedY += 1;
+    } else if(directionY === 'bottom'){
+      pixelsMovedY -= 1;
+    }
+
+    if(pixelsMovedY === 900){
+      directionY = 'bottom';
+    } else if(pixelsMovedY === 500){
+      directionY = 'top';
+    }
+
+    if(pixelsMovedX === 700){
+      directionX = 'left';
+    } else if(pixelsMovedX === 300){
+      directionX = 'right';
+    }
+
+
+
+
+  };
+
+  setInterval(() => {
+    moveDiv();
+  }, 10)
+
+</script>
+
+</html>
