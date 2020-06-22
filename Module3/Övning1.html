@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 1</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-22 -->
+  <!-- Module 3 - Övning 1 -
+
+  -->
+</head>
+<body>
+  <table id="table">
+    <thead id="head">
+    </thead>
+    <tbody id="body">
+    </tbody>
+  </table>
+</body>
+
+<script>
+
+  var tempen = [
+    ["","00-08","08-16","16-24", "medel"],
+    ["Malmö",12,16,9],
+    ["Mariestad",13,15,10],
+    ["Stockholm",13,15,13],
+    ["Upphärad",14,16,15],
+    ["Göteborg",13,14,12]
+  ];
+
+  calculateAvgTemp = (temps) => {
+    let sum = temps.reduce((previous, current) => current += previous);
+    let avg = sum / temps.length;
+    return avg.toFixed(1);
+  };
+
+  populateTable = (tempen) => {
+
+    // Lets add the headers
+    tempen[0].forEach((head) => {
+      let th = document.createElement('th');
+      th.innerHTML = head;
+      document.getElementById("head").appendChild(th);
+    });
+
+    // Add the table body, start iterating from 1 to skip array with headers
+    for(let i = 1; i < tempen.length; i++){
+
+      // Add tr (table row) element with id of i
+      let tr = document.createElement('tr');
+      tr.id = i;
+      document.getElementById('body').appendChild(tr);
+
+      // Add td elements to the tr element
+      for(let j = 0; j < tempen[i].length; j++){
+        let td = document.createElement('td');
+        td.innerHTML = tempen[i][j];
+        document.getElementById(i).appendChild(td);
+
+        // If we are at the last index in this temps array we want to calculate average temperature and add the result as a new td
+        if(j === tempen[i].length-1){
+          let averageTempTd = document.createElement('td');
+          averageTempTd.innerHTML = calculateAvgTemp(tempen[i].slice(1,4));
+          document.getElementById(i).appendChild(averageTempTd);
+        }
+      }
+    }
+  };
+  populateTable(tempen);
+
+</script>
+
+</html>
