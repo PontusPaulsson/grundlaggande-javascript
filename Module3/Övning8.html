@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 8</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
+  <!-- Module 3 - Övning 8 -
+  Skapa ett program som består av ett textfält (t.ex. <input type=text"">), en knapp och ett div-element.
+  När man trycker på knappen skall det som står i textrutan skrivas ut i div-elementet.
+  Bygg ut uppgiften ytterligare med någon valfri funktionalitet i javascript.
+
+  -->
+</head>
+<body>
+  <input type="text" id="input"/>
+  <button onclick="printText()">Print text!</button>
+  <button onclick="printTextBackwards()">Print text backwards!</button>
+  <div id="div"></div>
+
+</body>
+
+<script>
+  let inputField = document.getElementById('input');
+  let div = document.getElementById('div');
+
+  printText = () => {
+    div.innerHTML = inputField.value;
+  }
+  printTextBackwards = () => {
+    let text = "";
+    for(let i = inputField.value.length-1; i >= 0; i--){
+      text += inputField.value[i];
+    }
+    div.innerHTML = text;
+  }
+
+</script>
+</html>

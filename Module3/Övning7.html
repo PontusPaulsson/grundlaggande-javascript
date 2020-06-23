@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 7</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
+  <!-- Module 3 - Övning 7 -
+
+  Skriv ett program som men hjälp av javascript ändrar bakgrundsfärgen på ett div-element när man håller musen över den,
+  och sedan ändrar tillbaka till ursprungsfärgen när man flyttar bort muspekaren.
+  Bygg ut uppgiften ytterligare med någon valfri funktionalitet i javascript.
+
+  -->
+</head>
+<body>
+<div style="border-radius: 50%; height: 50px; width: 50px; background-color: black; position: absolute; top: 400px; left: 400px;" id="div">
+
+</div>
+</body>
+
+<script>
+  let div = document.getElementById('div');
+  let increase = true;
+  let interval = "";
+
+  div.addEventListener('mouseenter', function(){
+    div.style.backgroundColor = 'green';
+
+    // Set interval returns an ID we can use to cancel the interval
+    interval = setInterval(() => {
+      let height = div.style.height.substring(0, div.style.height.indexOf('px'));
+
+      if(increase)
+        height++;
+      else
+        height--;
+
+      if(height == 50){
+        increase = true;
+      } else if (height == 100){
+        increase = false;
+      }
+
+      div.style.height = height + 'px';
+      div.style.width = height + 'px';
+
+    }, 25)
+
+  });
+
+  div.addEventListener('mouseleave', function(){
+    div.style.backgroundColor = 'black';
+    div.style.height = '50px';
+    div.style.width = '50px';
+
+    // Canvel the "hoovereffect" when leaving the div
+    clearInterval(interval);
+  })
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 11</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
+  <!-- Module 3 - Övning 11 -
+   Återanvänd om möjligt klassen som skapades i föregående övning. Skapa en klass som heter Kundkorg.
+   En kundkorg innehåller flera varor alltså är ett av attributen en array av Varor.
+   Kundvagnen har en metod som heter calcTotal som loopar igenom alla varor i kundvagnen och skriver ut totalpriset någonstans på skärmen.
+   Det är ok att initiera ett antal objekt direkt när sidan laddas. (om denna uppgift känns svår spara den till slutet av modulen)
+  -->
+</head>
+<body>
+<button onclick="printVaror()">Skriv ut vara i consolen!</button>
+</body>
+
+<script>
+  class Vara{
+
+    constructor(namn, pris, beskrivning, antal){
+      this.namn = namn;
+      this.pris = pris;
+      this.beskrivning = beskrivning;
+      this.antal = antal;
+    }
+    calcSubTotal(){
+      return this.pris*this.antal;
+    }
+  }
+  class Kundkorg{
+    constructor(varor){
+      this.varor = varor;
+    }
+    calcTotal(){
+      return this.varor.reduce((current, previous) => (current.pris*current.antal + previous.pris*previous.antal))
+    }
+  }
+
+  printVaror = () => {
+    let varor = [
+      new Vara("Delicatoboll", 10, "Världens godaste sötsak!", 10),
+      new Vara("Havreflarn", 19, "En av sju kakor", 7)
+    ];
+
+    let kundKorg = new Kundkorg(varor);
+
+    console.log('Kundkorg total:',kundKorg.calcTotal());
+    
+
+  }
+
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 4</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
+  <!-- Module 3 - Övning 4 -
+  Studera koden nedan och förklara vad som skrivs ut. Tänk först - provkör sedan!
+
+  Förklaring:
+  Vi skapar ett objekt i ramminnet(allokerar utrymme) på vår dator med referensen "personA".
+  Sedan skapar vi en ny referens i minnet, personB, som pekar på samma objekt som personA.
+  När vi sedan ändrar personBs favoritfrukt till "pear" kommer vi alltså också ändra personAs favoritfrukt
+  eftersom båda referenserna pekar till samma objekt.
+
+  Sedan skapar vi ett nytt objekt och ändrar så att vår referens "personA" pekar mot det nya objektet.
+  personB kommer fortfarande att peka mot det "gamla" objektet.
+
+  -->
+</head>
+<body>
+
+</body>
+
+<script>
+
+  // Vad skrivs ut?
+  var personA = {firstName:"Thomas", lastName:"Lundqvist", age:47, favorite:"apple"}
+  var personB = personA;
+
+  personB.favorite = "pear";
+
+  printit(personA);
+  printit(personB);
+
+  personA = {firstName:"Robert", lastName:"Andersson Dahlberg", age:23, favorite:"banana"}
+
+  printit(personA);
+  printit(personB);
+
+  function printit(person) {
+    console.log(person.firstName + " likes " + person.favorite);
+  }
+
+</script>
+
+</html>

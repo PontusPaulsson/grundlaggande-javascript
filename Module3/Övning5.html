@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 5</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
+  <!-- Module 3 - Övning 5 -
+
+  Gör ett eget namespace och lägg till funktionen addera.
+  Funktionen addera ska ta två tal som inparameter och skriva ut summan av dessa på lämpligt ställe
+  (t.ex. genom att ändra innerHTML i ett element).
+
+  -->
+</head>
+<body>
+Tal1 <input type="text" class="number-1"/>
+Tal2 <input type="text" class="number-2" />
+<button onclick="sumNumbers()">Click me</button>
+Sum:<label class="label"></label>
+</body>
+
+<script>
+  let label = document.getElementsByClassName('label')[0];
+  let number1Input = document.getElementsByClassName('number-1')[0];
+  let number2Input = document.getElementsByClassName('number-2')[0];
+
+  let MYNAMESPACE = {
+    sum: (number1, number2) => { label.innerHTML = (number1 + number2) }
+  }
+
+  sumNumbers = () => {
+    MYNAMESPACE.sum(parseInt(number1Input.value), parseInt(number2Input.value));
+  }
+
+</script>
+
+</html>

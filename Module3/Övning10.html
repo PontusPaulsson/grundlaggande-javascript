@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 10</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
+  <!-- Module 3 - Övning 10 -
+  Skapa en klass som heter Vara den ska innehålla följande attribut: namn, pris, beskrivning, antal samt en metod som heter calcSubTotal.
+  calcSubTotal ska returnera pris*antal (alternativt skriv ut totalpriset någonstans på sidan) skapa ett objekt av denna klass direkt när sidan laddas.
+  Anropa metoden calcSubTotal genom att trycka på en knapp.
+  -->
+</head>
+<body>
+<button onclick="printVaror()">Skriv ut vara i consolen!</button>
+</body>
+
+<script>
+  class Vara{
+
+    constructor(namn, pris, beskrivning, antal){
+      this.namn = namn;
+      this.pris = pris;
+      this.beskrivning = beskrivning;
+      this.antal = antal;
+    }
+    calcSubTotal(){
+      return this.pris*this.antal;
+    }
+  }
+
+  printVaror = () => {
+    let varor = [
+      new Vara("Delicatoboll", 10, "Världens godaste sötsak!", 10),
+      new Vara("Havreflarn", 19, "En av sju kakor", 7)
+    ];
+
+    varor.forEach(x => {
+      console.log(x.namn, x.calcSubTotal());
+    })
+  }
+
+</script>
+</html>

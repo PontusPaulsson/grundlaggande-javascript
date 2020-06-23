@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 9</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
+  <!-- Module 3 - Övning 9 -
+  Skapa ett program där ett div-element rör sig fram och tillbaka i x-led på skärmen automatiskt.
+  Använd setInterval eller setTimeout. Bygg ut uppgiften ytterligare med någon valfri funktionalitet i javascript.
+  -->
+</head>
+<body>
+<div id="div" style="position: absolute; left: 0; background-color: black; height: 50px; width: 50px"></div>
+<div id="div1" style="position: absolute; left: 0; top: 60px; background-color: red; height: 50px; width: 50px"></div>
+</body>
+
+<script>
+  let moveRight = true;
+  let moveDown = true;
+  const div = document.getElementById('div');
+  const div1 = document.getElementById('div1');
+
+  setInterval(() => {
+
+    let left = div.style.left.substring(0, div.style.left.indexOf('px'));
+    if(left > 100)
+      moveRight = false;
+    else if(left < 0)
+      moveRight = true;
+
+    if(moveRight)
+      left++;
+    else
+      left--;
+
+    div.style.left = left + 'px';
+
+  }, 25);
+  setInterval(() => {
+
+    let top = div1.style.top.substring(0, div1.style.top.indexOf('px'));
+    if(top > 160)
+      moveDown = false;
+    else if(top < 60)
+      moveDown = true;
+
+    if(moveDown)
+      top++;
+    else
+      top--;
+
+    div1.style.top = top + 'px';
+
+  }, 25);
+</script>
+</html>

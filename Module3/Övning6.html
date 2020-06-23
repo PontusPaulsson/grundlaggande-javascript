@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 6</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
+  <!-- Module 3 - Övning 6 -
+
+  Använd gärna namespace.
+  Lägg till en variabel som heter antalClick.
+  Skapa en funktion som heter click och varje gång funktionen körs ska 1 läggas till variabeln antalClick.
+  Total antal klick ska skrivas ut på skärmen på valfritt ställe. Funktionen ska "triggas" när man trycker på en knapp.
+
+  -->
+</head>
+<body>
+Number of clicks: <label class="click-label"></label>
+<div>
+  <button onclick="MYNAMESPACE.increaseClicks()">Click me!</button>
+</div>
+</body>
+
+<script>
+
+  let MYNAMESPACE = {
+    antalKlick: 0,
+    increaseClicks: function(){
+      this.antalKlick++;
+      document.getElementsByClassName('click-label')[0].innerHTML = this.antalKlick;
+    }
+  }
+
+</script>
+</html>

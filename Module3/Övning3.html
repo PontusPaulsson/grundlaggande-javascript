@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 3 - Övning 3</title>
+  <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
+  <!-- Module 3 - Övning 3 -
+  Gör om uppgift 9 och 10 från modul 2 som handlar om läraren Morgan.
+  Programmet ska ha samma funktionalitet men istället för att lagra namn och betyg som två arrayer ska du använda en array av lämpliga objekt istället. se exemplet på en aray med objekt nedan.
+  -->
+</head>
+<body>
+
+</body>
+
+<script>
+  let persons = [
+    {"namn" : "kalle", "betyg" : "A"},
+    {"namn" : "sara", "betyg" : "E"},
+    {"namn" : "erik", "betyg" : "F"},
+    {"namn" : "mia", "betyg" : "B"},
+    {"namn" : "bertil", "betyg" : "B"}
+  ];
+
+  // Returns the grade for a specific person
+  getGrade = (name, persons) => {
+    return persons.find(person => person.namn == name).betyg;
+  };
+
+  // Return persons with a specific grade
+  getNames = (grade, persons) => {
+    let names = [];
+    for(let i = 0; i < persons.length; i++){
+      if(persons[i].betyg === grade)
+        names.push(persons[i]);
+    }
+    return names;
+  };
+
+  console.log('Kalle har betyg:', getGrade('kalle', persons));
+  console.log('Sara har betyg:', getGrade('sara', persons));
+
+  console.log('Every one with grade A', getNames('A', persons));
+  console.log('Every one with grade B', getNames('B', persons));
+
+</script>
+
+</html>
