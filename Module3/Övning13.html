@@ -2,20 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Module 3 - Övning 11</title>
+  <title>Module 3 - Övning 13</title>
   <!-- Pontus Paulsson - GJP100 - Högskolan Väst - 2020-06-23 -->
-  <!-- Module 3 - Övning 11 -
-  Rita ett klassdiagram med klasserna Kundvagn och Vara.
-  Kundvagn skall innehålla en metod för att kalkylera totalpris samt ett attribut med en array av Vara detta attribut kan vi kalla för Varoror.
-  Vara skall innehålla namn,beskrivning, pris och antal (paint fungerar om ni inte vill ladda hem något annat ritverktyg).
-
-  Se Övning12.png
+  <!-- Module 3 - Övning 13 -
+  Använd (och demonstrera) minst två klasser i ett eget program (fritt val men det får inte vara samma som i tidigare uppgifter)
+  klasserna skal innehålla attribut och metoder.
   -->
 </head>
 <body>
 </body>
 
 <script>
+
+  class Vechicle{
+    constructor(name, color, maxSpeed, numberOfWheels){
+      this.name = name;
+      this.color = color;
+      this.maxSpeed = maxSpeed;
+      this.numberOfWheels = numberOfWheels;
+    }
+    getSpeedPerWheel(){
+      return this.maxSpeed / this.numberOfWheels;
+    }
+  }
+
+  class Garage{
+    constructor(vehicles){
+      this.vehicles = vehicles;
+    }
+    // Returns the fastest vehicle in this garage
+    getFastestVehicle(){
+      let max = this.vehicles[0];
+      this.vehicles.forEach((vehicle) => {
+        if(vehicle.maxSpeed > max.maxSpeed)
+          max = vehicle;
+      })
+      return max;
+    }
+
+    // Returns the vehicle with the most number of wheels.
+    getMaxNumberOfWheels(){
+      let maxWheels = this.vehicles[0];
+      this.vehicles.forEach((vehicle) => {
+        if(vehicle.numberOfWheels > maxWheels.numberOfWheels)
+          maxWheels = vehicle;
+      })
+      return maxWheels;
+    }
+  }
+
+  let volvo240 = new Vechicle('volvo240','red', 200, 4);
+  let jasGripen = new Vechicle('jas gripen','grey', 1000, 2);
+  let treHjuling = new Vechicle('tre hjuling','blacknwhite', 5, 3);
+
+  let vehicles = [volvo240, jasGripen, treHjuling];
+
+  let garage = new Garage(vehicles);
+
+  // Log all vehicles in the garage
+  garage.vehicles.forEach((vehicle) => {
+    console.log(vehicle);
+  })
+
+  // Log the fastest vehicle in the garage
+  console.log('Fastest vehicle', garage.getFastestVehicle());
+
+  // Log the vehicle with the most number of wheels
+  console.log('Most number of wheels', garage.getMaxNumberOfWheels());
+
+  // Log the famous and wildly known "Speed per wheel" for a vehicle
+  console.log("Speed per wheel volvo240", volvo240.getSpeedPerWheel());
+  console.log("Speed per wheel jas gripen", jasGripen.getSpeedPerWheel());
 
 </script>
 </html>
